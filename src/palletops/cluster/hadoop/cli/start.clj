@@ -12,6 +12,11 @@
    [palletops.cluster.hadoop.cli-impl
     :only [debug error print-cluster read-cluster-spec read-credentials]]))
 
+;; https://github.com/pallet/pallet/issues/292
+(alter-var-root #'pallet.ssh.execute/ssh-connection
+  (constantly (pallet.transport/factory :ssh {:limit 50})))
+
+
 (defn start
   "Start a cluster"
   [{:keys [spec-file credentials profile phases] :as options} args]

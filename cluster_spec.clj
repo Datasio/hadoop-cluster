@@ -31,7 +31,9 @@
  :hadoop-settings
  {:dist :cloudera
   ;; Use a mirror of cloudera's distribution for greater reliability and speed
-  :dist-urls {:cloudera "http://3rd-party-dist.s3.amazonaws.com/"}
+  :cloudera-version "3.6"
+  :version "0.20.2"
+  :url "http://archive-primary.cloudera.com/cdh/3/hadoop-0.20.2-cdh3u6.tar.gz"
   ;;; By default, the ec2 credentials used to start the cluster will be used
   ;;; for s3 access. You can override the credentials here.
   ;; :fs.s3.awsAccessKeyId "your-key"
